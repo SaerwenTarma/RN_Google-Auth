@@ -2,19 +2,19 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
-import * as Google from 'expo-google-app-auth'
+import * as Google from 'expo-google-app-auth';
 
 export default class LoginScreen extends Component{
 
     // Acuerdense de poner su key de Google Console
     async _signInWithGoogle(){
-
+            
         try {
             const result = await Google.logInAsync({
-                androidClientId: "833456763323-ig9ndr0tbvb62jv4ddn6j8pos3a49m35.apps.googleusercontent.com",
+                androidClientId: "57603236905-i7l6ec7osnd5g904spid6bfrehiaa0u1.apps.googleusercontent.com",
                 scopes: ['profile', 'email'],
-            });
-    
+            } );
+            
             if (result.type === 'success') {
                 try {
                     this.props.onLogin();
@@ -27,9 +27,9 @@ export default class LoginScreen extends Component{
 
         } catch (e) {
             return { error: true };
-        }
+        }}
 
-    }
+    
 
     render(){
         return (
